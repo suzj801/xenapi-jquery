@@ -193,7 +193,7 @@
 
                             $.each(res, function (key,value) {
 
-                                if(value.is_a_snapshot === false && value.is_a_template === false && value.power_state == 'Running') {
+                                if(!value.is_a_snapshot && !value.is_a_template && value.power_state == 'Running') {
                                     var tuple = { name: value.name_label, ref: key}
                                     consoles.push(tuple);
                                     VM += 1;
